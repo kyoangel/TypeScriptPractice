@@ -12,13 +12,13 @@
         let groupedElementList = new Array<Array<number>>();
         var isFirstRoleFound = false;
         var oneGroup = new Array<number>();
-        var tie = 3;
+
         for (var v in this.list) {
             var currentElement = Number(this.list[v]);
             if (!isFirstRoleFound) {
                 oneGroup.push(currentElement);
             } else {
-                if (currentElement === tie) {
+                if (this.isTie(currentElement)) {
                     oneGroup.push(currentElement);
                 } else {
                     groupedElementList.push(oneGroup);
@@ -35,10 +35,11 @@
     }
 
     isRole(element: number): boolean {
-        var banker = 1;
-        var player = 2;
-        return element === banker || element === player;
+        return !this.isTie(element);
     }
 
+    isTie(element: number): boolean {
+        return element === 3 || element === 7 || element === 11 || element === 15;
+    }
 
 }

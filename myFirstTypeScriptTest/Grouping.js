@@ -9,14 +9,13 @@ var Grouping = /** @class */ (function () {
         var groupedElementList = new Array();
         var isFirstRoleFound = false;
         var oneGroup = new Array();
-        var tie = 3;
         for (var v in this.list) {
             var currentElement = Number(this.list[v]);
             if (!isFirstRoleFound) {
                 oneGroup.push(currentElement);
             }
             else {
-                if (currentElement === tie) {
+                if (this.isTie(currentElement)) {
                     oneGroup.push(currentElement);
                 }
                 else {
@@ -32,9 +31,10 @@ var Grouping = /** @class */ (function () {
         return groupedElementList;
     };
     Grouping.prototype.isRole = function (element) {
-        var banker = 1;
-        var player = 2;
-        return element === banker || element === player;
+        return !this.isTie(element);
+    };
+    Grouping.prototype.isTie = function (element) {
+        return element === 3 || element === 7 || element === 11 || element === 15;
     };
     return Grouping;
 }());
