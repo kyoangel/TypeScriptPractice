@@ -28,6 +28,13 @@ describe("BigRoadGridTest", function () {
         expect(false).toEqual(bigRoadGrid.isBankerPair);
         expect(false).toEqual(bigRoadGrid.isPlayerPair);
     });
+    it("Banker win, banker pair", function () {
+        var bigRoadGrid = new BigRoadGrid([5]);
+        expect("banker").toEqual(bigRoadGrid.role);
+        expect(0).toEqual(bigRoadGrid.tieCount);
+        expect(true).toEqual(bigRoadGrid.isBankerPair);
+        expect(false).toEqual(bigRoadGrid.isPlayerPair);
+    });
     it("Leading Tie + bankerWin element group", function () {
         var bigRoadGrid = new BigRoadGrid([3, 1]);
         expect("banker").toEqual(bigRoadGrid.role);
