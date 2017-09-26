@@ -28,9 +28,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="BigRoadGrid.ts" />
+    <TypeScriptCompile Include="BigRoadMapRender.ts" />
     <TypeScriptCompile Include="Grouping.ts" />
     <TypeScriptCompile Include="Scripts\typings\karma-jasmine\karma-jasmine.d.ts" />
     <TypeScriptCompile Include="test\BigRoadGridTest.ts" />
+    <TypeScriptCompile Include="test\BigRoadMapRenderTest.ts" />
     <TypeScriptCompile Include="test\GroupingTest.ts" />
     <TypeScriptCompile Include="Scripts\typings\jasmine\jasmine.d.ts" />
   </ItemGroup>
