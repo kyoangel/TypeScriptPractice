@@ -1,8 +1,8 @@
 ﻿class BigRoadGrid {
-    role: string;
-    tieCount: number = 0;
-    isBankerPair: boolean = false;
-    isPlayerPair: boolean = false;
+    public role: string;
+    public tieCount: number = 0;
+    public isBankerPair: boolean = false;
+    public isPlayerPair: boolean = false;
 
     constructor(group: Array<number>) {
         if (this.handleEmpty(group)) return;
@@ -17,7 +17,7 @@
         }
     }
 
-    handleEmpty(group: Array<number>): boolean {
+    private handleEmpty(group: Array<number>): boolean {
         if (group.length === 0) {
             this.role = null;
             return true;
@@ -25,20 +25,20 @@
         return false;
     }
 
-    handleTieCase(element: number): void {
+    private handleTieCase(element: number): void {
         if (this.role !== "banker" && this.role !== "player") {
             this.role = "";
         }
         this.tieCount++;
     }
 
-    handleNotTieCase(element: number): void {
+    private handleNotTieCase(element: number): void {
         this.setBankerOrPlayerWin(element);
         this.isElementBankerPair(element);
         this.isElementPlayerPair(element);
     }
 
-    setBankerOrPlayerWin(element: number): void {
+    private setBankerOrPlayerWin(element: number): void {
         var banker = 1;
         if ((element & banker) !== 0) {
             this.role = "banker";
@@ -47,7 +47,7 @@
         }
     }
 
-    isElementBankerPair(element: number) :void{
+    private isElementBankerPair(element: number) :void{
         var bankerPair = 4;
         if ((element & bankerPair) !== 0) {
             this.isBankerPair = true;
@@ -56,7 +56,7 @@
         }
     }
 
-    isElementPlayerPair(element: number) :void{
+    private isElementPlayerPair(element: number) :void{
         var playerPair = 8;
         if ((element & playerPair) !== 0) {
             this.isPlayerPair = true;
@@ -65,7 +65,7 @@
         }
     }
 
-    isTie(element: number): boolean {
+    private isTie(element: number): boolean {
         return element === 3 || element === 7 || element === 11 || element === 15;
     }
 }

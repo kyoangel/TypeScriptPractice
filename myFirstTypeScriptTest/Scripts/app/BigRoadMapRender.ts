@@ -2,7 +2,7 @@
 /// <reference path="bigroadgrid.ts" />
 
 class BigRoadMapRender {
-    bigRoadMap: Array<Array<string>>;
+    public bigRoadMap: Array<Array<string>>;
 
     constructor(gridArray: Array<BigRoadGrid>) {
         if (gridArray.length === 0) {
@@ -47,7 +47,7 @@ class BigRoadMapRender {
 
     }
 
-    getRenderRole(grid: BigRoadGrid): string {
+    private getRenderRole(grid: BigRoadGrid): string {
         var result = "";
         if (grid.role === "banker") {
             result += "b";
@@ -68,7 +68,7 @@ class BigRoadMapRender {
         return result;
     }
 
-    putGridToRightColumn(column: number, row: number, grid: BigRoadGrid): void {
+    private putGridToRightColumn(column: number, row: number, grid: BigRoadGrid): void {
 
         if (this.bigRoadMap[column] === undefined) {
             this.bigRoadMap.push(new Array<string>(6));
@@ -77,7 +77,7 @@ class BigRoadMapRender {
     }
 
 
-    isDownGridAvaible(column: number, row: number): boolean {
+    private isDownGridAvaible(column: number, row: number): boolean {
         var result = true;
         if (row === 6) {
             result = false;

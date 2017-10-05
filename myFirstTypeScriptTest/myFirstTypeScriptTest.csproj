@@ -20,6 +20,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.css" />
@@ -27,17 +28,18 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="BigRoadGrid.ts" />
-    <TypeScriptCompile Include="BigRoadMapRender.ts" />
-    <TypeScriptCompile Include="Grouping.ts" />
+    <TypeScriptCompile Include="Scripts\app\BigRoadGrid.ts" />
+    <TypeScriptCompile Include="Scripts\app\BigRoadMapRender.ts" />
+    <TypeScriptCompile Include="Scripts\app\Grouping.ts" />
     <TypeScriptCompile Include="Scripts\typings\karma-jasmine\karma-jasmine.d.ts" />
-    <TypeScriptCompile Include="test\BigRoadGridTest.ts" />
-    <TypeScriptCompile Include="test\BigRoadMapRenderTest.ts" />
-    <TypeScriptCompile Include="test\GroupingTest.ts" />
+    <TypeScriptCompile Include="Scripts\Tests\BigRoadGridTest.ts" />
+    <TypeScriptCompile Include="Scripts\Tests\BigRoadMapRenderTest.ts" />
+    <TypeScriptCompile Include="Scripts\Tests\GroupingTest.ts" />
     <TypeScriptCompile Include="Scripts\typings\jasmine\jasmine.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Scripts\chutzpah.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

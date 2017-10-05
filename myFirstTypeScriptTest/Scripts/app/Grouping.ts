@@ -34,11 +34,11 @@
         return groupedElementList;
     }
 
-    isRole(element: number): boolean {
+    private isRole(element: number): boolean {
         return !this.isTie(element);
     }
 
-    isTie(element: number): boolean {
+    private isTie(element: number): boolean {
         return element === 3 || element === 7 || element === 11 || element === 15;
     }
 
