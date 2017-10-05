@@ -1,28 +1,26 @@
-﻿class Grouping {
-    list: Array<number>;
-
-    constructor(list: Array<number>) {
+var Grouping = /** @class */ (function () {
+    function Grouping(list) {
         this.list = list;
     }
-
-    group(): Array<Array<number>> {
+    Grouping.prototype.group = function () {
         if (this.list.length === 0) {
             return null;
         }
-        let groupedElementList = new Array<Array<number>>();
+        var groupedElementList = new Array();
         var isFirstRoleFound = false;
-        var oneGroup = new Array<number>();
-
+        var oneGroup = new Array();
         for (var v in this.list) {
             var currentElement = Number(this.list[v]);
             if (!isFirstRoleFound) {
                 oneGroup.push(currentElement);
-            } else {
+            }
+            else {
                 if (this.isTie(currentElement)) {
                     oneGroup.push(currentElement);
-                } else {
+                }
+                else {
                     groupedElementList.push(oneGroup);
-                    oneGroup = new Array<number>();
+                    oneGroup = new Array();
                     oneGroup.push(currentElement);
                 }
             }
@@ -30,16 +28,14 @@
                 isFirstRoleFound = this.isRole(currentElement);
         }
         groupedElementList.push(oneGroup);
-
         return groupedElementList;
-    }
-
-    isRole(element: number): boolean {
+    };
+    Grouping.prototype.isRole = function (element) {
         return !this.isTie(element);
-    }
-
-    isTie(element: number): boolean {
+    };
+    Grouping.prototype.isTie = function (element) {
         return element === 3 || element === 7 || element === 11 || element === 15;
-    }
-
-}
+    };
+    return Grouping;
+}());
+//# sourceMappingURL=grouping.js.map

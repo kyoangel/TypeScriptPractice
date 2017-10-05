@@ -1,4 +1,4 @@
-/// <reference path="../grouping.ts" />
+/// <reference path="../app/grouping.ts" />
 describe("GroupingTest", function () {
     it("empty input test", function () {
         var grouping = new Grouping([]);

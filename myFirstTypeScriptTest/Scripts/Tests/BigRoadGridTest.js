@@ -1,4 +1,4 @@
-/// <reference path="../bigroadgrid.ts" />
+/// <reference path="../app/bigroadgrid.ts" />
 describe("BigRoadGridTest", function () {
     it("input empty role should be null", function () {
         var bigRoadGrid = new BigRoadGrid([]);
